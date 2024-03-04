@@ -1,0 +1,9 @@
+<svg id="eId8yjlGX9A1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1013" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+<rect width="100%" height="100%" fill="#7b8197"></rect>
+<text dx="0" dy="0" font-family="'Montserrat'" font-size="90" font-weight="300" transform="matrix(1 0 0 1 900 513)" fill="#ffff" stroke="#fff" text-anchor="middle"></text>
+<line x1="150" y1="100" x2="1050" y2="913" stroke="#c6b7bd" stroke-width="2"/>
+<line x1="1050" y1="100" x2="150" y2="913" stroke="#FFFFFF" stroke-width="2"/>
+<circle cx="500" cy="506" r="250" fill="none" stroke="#c6b7bd" stroke-width="2"/>
+<circle cx="500" cy="506" r="150" fill="none" stroke="#c6b7bd" stroke-width="2"/>
+<circle cx="500" cy="506" r="50" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+</svg>
