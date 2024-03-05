@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 //import link
 
 import {Link} from 'react-router-dom';
@@ -22,8 +22,30 @@ const Sidebar = () => {
 
   const {isOpen, handleClose} = useContext(SidebarContext); 
   const {cart, clearCart, total, itemAmount} = useContext(CartContext);
+
+    //ref for sidebar element
+    const sidebarRef = useRef();
+
+    // effect hook for attaching event listener
+    useEffect(() => {
+      // function to close sidebar when clicked outside
+      const handleClickOutside = (event) => {
+        if (sidebarRef.current && !sidebarRef.current.contains(event.target) && isOpen){
+          handleClose();
+        }
+      };
+  
+      // attach the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+  
+      // clean up
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      }
+    }, [isOpen, handleClose]);
+
   return (
-  <div className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-[white] fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw]
+  <div ref={sidebarRef} className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-[white] fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw]
   transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
     <div className='flex items-center justify-between py-6 border-b border-[black]'>
       <div className='uppercase text-sm font-semibold'>Shopping Bag ({itemAmount})</div>
